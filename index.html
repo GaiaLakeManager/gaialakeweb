@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaia Lake Bungalow | Kandalama</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config with Your Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gaia: {
+                            green: '#4C9D38',
+                            blue: '#009fe3',
+                            dark: '#111827',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .image-hover-zoom {
+            overflow: hidden;
+        }
+        .image-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .image-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+        /* Hide scrollbar during intro */
+        body.intro-active {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gaia-light text-gray-800 font-sans antialiased intro-active">
+
+    <!-- 1. VIDEO INTRO SCREEN -->
+    <div id="intro-screen" class="fixed inset-0 z-[100] bg-white flex items-center justify-center transition-opacity duration-1000">
+        <video id="intro-video" autoplay muted playsinline class="w-full h-full object-cover md:object-contain">
+            <source src="Gaia_lake_intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="skip-btn" class="absolute bottom-10 px-6 py-2 bg-white/80 text-gaia-blue font-bold rounded-full shadow-lg hover:bg-gaia-green hover:text-white transition">
+            Skip Intro
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 border-b border-white/20 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex-shrink-0">
+                <img src="GaiaLOGO-Gemini.png" alt="Gaia Lake Logo" class="h-14 w-auto">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center text-gaia-dark text-sm font-semibold tracking-wide uppercase">
+                <a href="#home" class="hover:text-gaia-blue transition">Home</a>
+                <a href="#sanctuary" class="hover:text-gaia-blue transition">The Estate</a>
+                <a href="#accommodation" class="hover:text-gaia-blue transition">Villas</a>
+                <a href="#gallery" class="hover:text-gaia-blue transition">Gallery</a>
+                <a href="#location" class="hover:text-gaia-blue transition">Location</a>
+                <a href="#contact" class="px-6 py-2 bg-gaia-green text-white rounded hover:bg-gaia-blue transition duration-300 shadow-md">Book Direct</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page 1: Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="GaiaPhotos/Garden-V6.jpg" alt="Gaia Lake Bungalow Exterior" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mt-20">
+            <p class="text-white font-sans tracking-[0.3em] uppercase text-sm mb-6 drop-shadow-md">Welcome to Dambulla</p>
+            <h1 class="text-5xl md:text-7xl font-serif text-white leading-tight mb-6 drop-shadow-xl">
+                Experience Modern Tropical Serenity on the Banks of Kandalama Lake
+            </h1>
+            <p class="text-lg md:text-xl text-gray-100 font-light max-w-3xl mx-auto drop-shadow-md">
+                A luxury 4-bedroom countryside villa retreat featuring a private pool, panoramic lake views, and authentic Sri Lankan hospitality.
+            </p>
+        </div>
+    </section>
+
+    <!-- Page 1 (cont): Intro & Vision -->
+    <section id="sanctuary" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h4 class="text-gaia-blue font-sans text-sm font-bold tracking-[0.2em] uppercase mb-4">The Sanctuary</h4>
+                    <h2 class="text-4xl font-serif text-gaia-dark mb-6 leading-tight">A Private 232 sq.m Estate</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Immerse yourself in modern tropical architecture where open-format designs seamlessly bring the outdoors in. Nestled amidst a lush wild orchard and rolling lawns that lead directly to the lake, Gaia Lake Bungalow is an exclusive haven designed for profound relaxation.
+                    </p>
+                    <div class="mt-8 border-l-4 border-gaia-green pl-6 bg-gaia-light p-4 rounded-r-lg">
+                        <p class="text-gaia-dark font-serif text-lg italic mb-2">"Our Vision: To be Sri Lanka’s premier eco-luxury sanctuary in the Cultural Triangle..."</p>
+                        <p class="text-gray-500 text-sm font-sans leading-relaxed">
+                            Our mission is to provide personalized, high-touch hospitality while preserving the local ecosystem of Kandalama Lake.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-hover-zoom rounded-lg shadow-xl">
+                    <img src="GaiaPhotos/G-A1.avif" alt="Twilight view of the villa" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations Section -->
+    <section id="accommodation" class="py-24 bg-gaia-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-gaia-blue font-sans text-sm font-bold tracking-[0.2em] uppercase mb-4">Accommodations</h4>
+                <h2 class="text-4xl font-serif text-gaia-dark mb-4">Rest in Refined Comfort</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Master Suite -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="image-hover-zoom h-64">
+                        <img src="GaiaPhotos/R2-1.jpg" alt="Lakeview Suite" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif text-gaia-dark mb-2">The Lakeview Suite</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">Bedroom 1</p>
+                        <p class="text-gray-600 text-sm mb-4">Plush double bed, comfortable couch, and a private balcony to enjoy breathtaking views of the lake.</p>
+                    </div>
+                </div>
+                <!-- Twin Room -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="image-hover-zoom h-64">
+                        <img src="GaiaPhotos/R3-A1.avif" alt="Twin Bedroom" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif text-gaia-dark mb-2">The Garden Retreat</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">Bedroom 3</p>
+                        <p class="text-gray-600 text-sm mb-4">Two single beds, dedicated workspace, and sweeping views of the verdant gardens.</p>
+                    </div>
+                </div>
+                <!-- Bathrooms -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="image-hover-zoom h-64">
+                        <img src="GaiaPhotos/Bath1.jpg" alt="Tropical Bathroom" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif text-gaia-dark mb-2">Tropical Bathing</h3>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">4 En-suite Facilities</p>
+                        <p class="text-gray-600 text-sm mb-4">Immaculate modern bathrooms featuring polished cement finishes and walk-in showers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Image Gallery -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h4 class="text-gaia-green font-sans text-sm font-bold tracking-[0.2em] uppercase mb-4">Visual Tour</h4>
+                <h2 class="text-4xl font-serif text-gaia-dark mb-4">Gaia Lake Gallery</h2>
+                <p class="text-gray-500">Click any image to enlarge</p>
+            </div>
+            
+            <!-- Gallery Grid: Adjust paths to your actual sub-folders -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="image-hover-zoom h-48 rounded shadow-sm">
+                    <img src="GaiaPhotos/Garden-V6.jpg" alt="Garden" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                </div>
+                <div class="image-hover-zoom h-48 rounded shadow-sm">
+                    <img src="GaiaPhotos/Garden-V7.jpg" alt="Pool Area" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                </div>
+                <div class="image-hover-zoom h-48 rounded shadow-sm">
+                    <img src="GaiaPhotos/Garden-V9.jpg" alt="Morning Coffee" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                </div>
+                <div class="image-hover-zoom h-48 rounded shadow-sm">
+                    <img src="GaiaPhotos/R2-1.jpg" alt="Room 1" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                </div>
+                <!-- You can add more placeholder divs here pointing to your subfolders -->
+                <div class="image-hover-zoom h-48 rounded shadow-sm">
+                    <img src="GaiaPhotos/G-A1.avif" alt="Night View" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                </div>
+                <div class="image-hover-zoom h-48 rounded shadow-sm">
+    <img src="GaiaPhotos/Dinning/dinner1.jpg" alt="Dining" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+</div>
+
+<div class="image-hover-zoom h-48 rounded shadow-sm">
+    <img src="GaiaPhotos/Outside/lake1.jpg" alt="Lake" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+</div>
+
+<div class="image-hover-zoom h-48 rounded shadow-sm">
+    <img src="GaiaPhotos/Rooms/Room4.jpg" alt="Room 4" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(this.src)">
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL (Hidden by default) -->
+    <div id="lightbox" class="fixed inset-0 z-[200] bg-black/95 hidden flex flex-col items-center justify-center backdrop-blur-sm transition-opacity">
+        <button onclick="closeLightbox()" class="absolute top-6 right-8 text-white text-4xl hover:text-gaia-green transition">&times;</button>
+        <img id="lightbox-img" src="" alt="Enlarged Gallery Image" class="max-w-[90%] max-h-[90vh] object-contain rounded shadow-2xl border-4 border-white/10">
+    </div>
+
+    <!-- Nearby Attractions -->
+    <section id="location" class="py-24 bg-gaia-dark text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h4 class="text-gaia-green font-sans text-sm font-bold tracking-[0.2em] uppercase mb-4 text-center">The Cultural Triangle</h4>
+            <h2 class="text-4xl font-serif mb-12 text-center">Nearby Discoveries</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 max-w-4xl mx-auto">
+                <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                    <span class="font-serif text-lg">Dambulla Cave Temple</span>
+                    <span class="text-gaia-blue text-sm font-medium">5.0 km</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                    <span class="font-serif text-lg text-gaia-green font-bold">Popham's Arboretum Night safari</span>
+                    <span class="text-gaia-blue text-sm font-medium">4.5 km</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                    <span class="font-serif text-lg">Sigiriya Rock Fortress</span>
+                    <span class="text-gaia-blue text-sm font-medium">17.0 km</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                    <span class="font-serif text-lg">Minneriya Safaris</span>
+                    <span class="text-gaia-blue text-sm font-medium">30.0 km</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="bg-white pt-20 pb-10 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center md:text-left">
+            <div>
+                <img src="GaiaLOGO-Gemini.png" alt="Gaia Lake Logo" class="h-16 mx-auto md:mx-0 mb-6">
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    <i class="fas fa-map-marker-alt text-gaia-green mr-2"></i>
+                    3rd Mile Post, Kandalama Tank Access Road, Dambulla, 21106, Sri Lanka.
+                </p>
+                <p class="text-gray-600 text-sm mb-2">
+                    <i class="fas fa-phone text-gaia-green mr-2"></i> +94 772 911 501
+                </p>
+                <p class="text-gray-600 text-sm">
+                    <i class="fas fa-envelope text-gaia-green mr-2"></i> gaialake.kandalama@gmail.com
+                </p>
+		<p class="text-gray-600 text-sm">
+                    <i class="fas fa-envelope text-gaia-green mr-2"></i> info.gaialake@gmail.com
+                </p>
+            </div>
+
+            <!-- Booking Links -->
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="font-sans text-sm font-bold tracking-widest uppercase text-gaia-blue mb-6">Book Now</h3>
+                <a href="https://www.airbnb.com/rooms/45354902" target="_blank" class="flex items-center gap-3 text-gray-600 hover:text-gaia-green mb-4 transition">
+                    <i class="fa-brands fa-airbnb text-xl text-[#FF5A5F]"></i>
+                    <span>Airbnb Booking</span>
+                </a>
+                <a href="https://www.booking.com/hotel/lk/gaia-lake-bungalow-kandalama.html" target="_blank" class="flex items-center gap-3 text-gray-600 hover:text-gaia-green mb-4 transition">
+                    <span class="bg-[#003580] text-white text-xs font-bold px-1 py-0.5 rounded">B.</span>
+                    <span>Booking.com</span>
+                </a>
+            </div>
+
+            <!-- Social Media -->
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="font-sans text-sm font-bold tracking-widest uppercase text-gaia-blue mb-6">Connect</h3>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-gaia-green transition text-2xl"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-gaia-green transition text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-gaia-green transition text-2xl"><i class="fa-brands fa-google"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-400 border-t border-gray-100 pt-8">
+            &copy; 2026 Gaia Lake Bungalow. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // --- Video Intro Logic ---
+        const introScreen = document.getElementById('intro-screen');
+        const introVideo = document.getElementById('intro-video');
+        const skipBtn = document.getElementById('skip-btn');
+        const body = document.body;
+
+        function closeIntro() {
+            introScreen.classList.add('opacity-0'); // Fades out
+            setTimeout(() => {
+                introScreen.style.display = 'none'; // Removes from layout
+                body.classList.remove('intro-active'); // Enables scrolling
+            }, 1000); // Waits for 1 second fade out to complete
+        }
+
+        // Close intro when video finishes natively
+        if(introVideo) {
+            introVideo.addEventListener('ended', closeIntro);
+        }
+        // Close intro if user clicks skip
+        if(skipBtn) {
+            skipBtn.addEventListener('click', closeIntro);
+        }
+
+        // --- Lightbox Gallery Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightboxImg.src = '';
+        }
+
+        // Close lightbox if clicking outside the image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
