@@ -384,7 +384,6 @@
             <div class="text-center mb-16">
                 <h4 class="text-gaia-blue font-sans text-sm font-bold tracking-[0.2em] uppercase mb-4">Exclusive Deals</h4>
                 <h2 class="text-4xl font-serif text-gaia-dark mb-4">Offers & Promotions</h2>
-                <p class="text-gray-500 text-sm">Admin Management Template - Add, edit, or remove promotions dynamically.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -563,8 +562,11 @@
     </div>
 
     <!-- Footer & Contact -->
-    <footer id="contact" class="bg-white pt-20 pb-10 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 text-center md:text-left">
+    <footer id="contact" class="bg-white pt-16 border-t border-gray-200">
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+            
+            <!-- Column 1: Contact Info -->
             <div>
                 <img src="GaiaLOGO-Gemini.png" alt="Gaia Lake Logo" class="h-16 mx-auto md:mx-0 mb-6">
                 <p class="text-gray-600 text-sm leading-relaxed mb-4">
@@ -577,16 +579,13 @@
                 <p class="text-gray-600 text-sm">
                     <i class="fas fa-envelope text-gaia-green mr-2"></i> info.gaialake@gmail.com
                 </p>
-		<p class="text-gray-600 text-sm">
-                    <i class="fas fa-envelope text-gaia-green mr-2"></i> gaialake.kandalama@gmail.com
-                </p>
             </div>
 
-            <!-- Booking Links -->
+            <!-- Column 2: Booking Links -->
             <div class="flex flex-col items-center md:items-start">
                 <h3 class="font-sans text-sm font-bold tracking-widest uppercase text-gaia-blue mb-6">Book Now</h3>
                 
-                <!-- Airbnb Link with Rating -->
+                <!-- Airbnb -->
                 <a href="https://www.airbnb.com/rooms/45354902" target="_blank" class="flex flex-col group mb-5">
                     <div class="flex items-center gap-3 text-gray-600 group-hover:text-gaia-green transition">
                         <i class="fa-brands fa-airbnb text-xl text-[#FF5A5F]"></i>
@@ -598,7 +597,7 @@
                     </div>
                 </a>
 
-                <!-- Booking.com Link with Rating -->
+                <!-- Booking.com -->
                 <a href="https://www.booking.com/hotel/lk/gaia-lake-bungalow-kandalama.html" target="_blank" class="flex flex-col group mb-4">
                     <div class="flex items-center gap-3 text-gray-600 group-hover:text-gaia-green transition">
                         <span class="bg-[#003580] text-white text-xs font-bold px-1.5 py-0.5 rounded">B.</span>
@@ -611,7 +610,7 @@
                 </a>
             </div>
 
-            <!-- Social Media -->
+            <!-- Column 3: Social Media -->
             <div class="flex flex-col items-center md:items-start">
                 <h3 class="font-sans text-sm font-bold tracking-widest uppercase text-gaia-blue mb-6">Follow us on</h3>
                 <div class="flex space-x-6">
@@ -621,8 +620,13 @@
                 </div>
             </div>
             
-        <div class="text-center text-xs text-gray-400 border-t border-gray-100 pt-8">
-            &copy; 2026 Gaia Lake Bungalow. All rights reserved.
+        </div> <!-- This closing div ensures the grid is safely closed -->
+
+        <!-- Bottom Copyright Bar (Full Width, Gaia Green, White Text) -->
+        <div class="w-full bg-gaia-green py-5 mt-4">
+            <div class="max-w-7xl mx-auto px-6 text-center text-sm text-white tracking-wide">
+                &copy; 2026 Gaia Lake Bungalow. All rights reserved.
+            </div>
         </div>
     </footer>
 
